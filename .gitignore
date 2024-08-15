@@ -98,6 +98,10 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+# Exclude Visual Studio project files
+*.pyproj
+*.sln
+
 # Chutzpah Test files
 _Chutzpah*
 
