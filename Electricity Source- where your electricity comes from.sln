@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34316.72
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Electricity Source- where your electricity comes from", "Electricity Source- where your electricity comes from.pyproj", "{E1A00277-3D02-4A56-A3C0-D12E422B4C48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1A00277-3D02-4A56-A3C0-D12E422B4C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A00277-3D02-4A56-A3C0-D12E422B4C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CDF2F19-A444-4DCF-BD7B-0656B734671C}
+	EndGlobalSection
+EndGlobal
