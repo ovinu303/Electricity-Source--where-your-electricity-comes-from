@@ -8,6 +8,5 @@ Features:
 4) Sorted Results: Energy sources are ordered by their net energy production percentage for easy analysis.
 
 Prerequisites:
-
 1) Python 3.6 or higher
 2) An Electricity Maps API key (Free tier)
