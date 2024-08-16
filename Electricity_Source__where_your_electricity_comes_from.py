@@ -1,3 +1,4 @@
+from itertools import product
 import requests
 from geopy.geocoders import Nominatim
 from datetime import datetime
@@ -35,7 +36,7 @@ def get_CO2_intensity_data(lat, lon):
             print(f"Error fetching CO2 intensity data. Status code: {response.status_code}")
             return None
     except Exception as e:
-        print(f"Error in get_electricity_data: {e}")
+        print(f"Error in accessing CO2 intensity data: {e}")
         return None
 
 def get_power_breakdown(lat, lon):
@@ -52,7 +53,7 @@ def get_power_breakdown(lat, lon):
             print(f"Error fetching power breakdown data. Status code: {response.status_code}")
             return None
     except Exception as e:
-        print(f"Error in get_power_breakdown: {e}")
+        print(f"Error in accessing power breakdown data: {e}")
         return None
 
 
@@ -104,16 +105,16 @@ def main():
          # Display fossilFreePercentage
          print(f"\nPercentage of energy generated from fossil free sources: {power_data['fossilFreePercentage']}%")
 
-         # Calculate power consumption breakdown in watts and percentage
-         total_consumption = power_data['powerConsumptionTotal']
-         consumption_breakdown = [
-                [source, consumption, f"{(consumption / total_consumption) * 100:.2f}%"]
-                for source, consumption in power_data['powerConsumptionBreakdown'].items()
-            ]
-         consumption_breakdown.sort(key=lambda x: x[1], reverse=True)
+         # Calculate power production breakdown in watts and percentage
+         total_production = power_data['powerProductionTotal']
+         production_breakdown = [
+             [source, production if production is not None else 0, f"{((production if production is not None else 0) / total_production) * 100:.2f}%"]
+         for source, production in power_data['powerProductionBreakdown'].items()
+         ]
+         production_breakdown.sort(key=lambda x: x[1], reverse=True)
             
-         print("\nPower Consumption Breakdown:")
-         print(tabulate(consumption_breakdown, headers=["Power Source", "Watts", "Percentage"], tablefmt="pretty"))
+         print("\nPower Production Breakdown:")
+         print(tabulate(production_breakdown, headers=["Power Source", "Watts", "Percentage"], tablefmt="pretty"))
         else:
             print(f"Failed to fetch power breakdown data for {city}.")
     
