@@ -1,4 +1,3 @@
-from itertools import product
 import requests
 from geopy.geocoders import Nominatim
 from datetime import datetime
